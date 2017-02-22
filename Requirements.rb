@@ -1,0 +1,7 @@
+require './Spaceship'
+require './Planet'
+require './PlayerInput'
+require './GamePrint'
+require './UpdateGame'
+require './Scoring'
+require './AI'
