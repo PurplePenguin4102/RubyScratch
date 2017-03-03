@@ -1,3 +1,5 @@
+require './StarField'
+
 class GameState
 	attr_accessor :current_status, 
 	:players, 
@@ -18,10 +20,11 @@ class GameState
 		@player_2_planets = []
 		@whose_turn = 1
 		@turn_count = 1
+		@star_field = StarField.new
 	end
 
 	def inspect
-		"Players : #{players} \nPlayer 1 ships/planets : #{player_1_ships}/#{player_1_planets} \t Player 2 ships/planets : #{player_2_ships}/#{player_2_planets}"
+		"Players : #{@players} System : #{@star_field}\nPlayer 1 ships/planets : #{@player_1_ships}/#{@player_1_planets} \t Player 2 ships/planets : #{@player_2_ships}/#{@player_2_planets}"
 	end
 
 	def to_s
