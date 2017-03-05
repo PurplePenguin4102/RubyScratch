@@ -1,9 +1,6 @@
 require './Requirements'
 
-s = Spaceship.new
-pl = Planet.new
 game_state = GameState.new
-
 loop do
 	print_game_state(game_state)
 	player_input = get_player_input
