@@ -23,7 +23,7 @@ class GameState
 	end
 
 	def inspect
-		"Players :: #{@players}\nSystem :: #{@star_field.to_s}\nPlayer 1 #{@player1}\nPlayer 2 #{@player2}"
+		"Players :: #{@players}\nSystem :: #{@star_field}\nPlayer 1 #{@player1}\nPlayer 2 #{@player2}"
 	end
 
 	def to_s
