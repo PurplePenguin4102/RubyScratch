@@ -10,15 +10,13 @@ class Planet
 		@ships_in_orbit = []
 		@owner = nil
 		@population = rand(1_000..7_000)
-		@size = rand(1..5) * 10_000 + rand(1..9) * 1_000 + rand(1..1000)
+		@size = rand(10_000..50_000)
 		@type = 
 			if @size > 25_000
-				Planet_Types[2]
+				"High Grav"
 			else
-				Planet_Types.sample
+				(Planet_Types - ["High Grav"]).sample
 			end
-
-		puts to_s
 	end
 
 	def to_s()
@@ -26,10 +24,10 @@ class Planet
 	end
 
 	def inspect()
-		ownername = :owner || "nobody"
-		%Q("Scanners reveal the #{@type.downcase} planetoid #{@name} owned by #{ownername}::
+		ownername = @owner || "nobody"
+		%Q(Scanners reveal the #{@type.downcase} planetoid #{@name} owned by #{ownername}::
 		Size #{size}km in diameter\tPopulation #{population / 1000.0} billion
-		#{@infrastructure.count} known satellites\t#{ships_in_orbit.count}" ships orbiting
+		#{@infrastructure.count} known satellites\t#{ships_in_orbit.count} ships orbiting
 		)
 	end
 

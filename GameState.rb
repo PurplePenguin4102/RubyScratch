@@ -5,7 +5,8 @@ class GameState
 	:whose_turn,
 	:turn_count,
 	:player1,
-	:player2
+	:player2,
+	:star_field
 
 	def initialize
 		@players = 2
