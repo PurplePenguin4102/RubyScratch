@@ -49,6 +49,14 @@ class TextParser
 					:verb => :SCAN, 
 					:noun => $1
 				})
+		when "end turn"
+			action = PlayerAction.new(
+				{
+					:raw_input => raw_text,
+					:action => :END_TURN,
+					:verb => :END,
+					:noun => :TURN
+				})
 		else
 			action = PlayerAction.new(
 				{
