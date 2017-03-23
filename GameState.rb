@@ -10,7 +10,7 @@ class GameState
 
 	def initialize
 		@players = 2
-		@player1 = Player.new
+		@player1 = Player.new :prompt_name
 		@player2 = Player.new
 		@battles_running = []
 		@whose_turn = 1
@@ -25,6 +25,12 @@ class GameState
 
 	def inspect
 		"Players :: #{@players}\nSystem :: #{@star_field}\nPlayer 1 #{@player1}\nPlayer 2 #{@player2}"
+	end
+
+	def get_introduction
+		year = rand(3000..4999)
+		%Q(
+Welcome, star commander. The year is #{year}.)
 	end
 
 	def to_s

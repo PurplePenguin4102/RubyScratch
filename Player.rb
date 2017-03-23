@@ -8,9 +8,21 @@ class Player
 	def initialize (plr_name = "")
 		@ships = []
 		@planets = []
-		@name = plr_name
-		@name = Rnd_player_names.sample if name == "" 
+		if plr_name == :prompt_name
+			@name = prompt_name
+			puts "You have been registered as \"#{@name}\" - star commander." 
+		else
+			@name = plr_name
+			@name = Rnd_player_names.sample if name == "" 
+		end
 		@has_advanced_scanner = false
+ 	end
+
+ 	def prompt_name
+ 		puts_term "Please register your callsign, Star Commander (blank for random name)"
+		print "::> "
+		raw_text = gets.chomp
+		return raw_text == "" ? Rnd_player_names.sample : raw_text;
  	end
 
  	def has_advanced_scanner?

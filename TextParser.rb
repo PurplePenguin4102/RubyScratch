@@ -3,20 +3,28 @@ class TextParser
 		case raw_text.downcase
 		when "inspect planets"
 			action = PlayerAction.new(
-				{
-					:raw_input => raw_text, 
-					:action => :INSPECT_ALL, 
-					:verb => :INSPECT, 
-					:noun => :ALL
-				})
+			{
+				:raw_input => raw_text, 
+				:action => :INSPECT_ALL, 
+				:verb => :INSPECT, 
+				:noun => :ALL
+			})
 		when "look at planets"
 			action = PlayerAction.new(
-				{
-					:raw_input => raw_text, 
-					:action => :INSPECT_ALL, 
-					:verb => :INSPECT, 
-					:noun => :ALL
-				})
+			{
+				:raw_input => raw_text, 
+				:action => :INSPECT_ALL, 
+				:verb => :INSPECT, 
+				:noun => :ALL
+			})
+		when "inspect all"
+			action = PlayerAction.new(
+			{
+				:raw_input => raw_text,
+				:action => :INSPECT_ALL,
+				:verb => :INSPECT,
+				:noun => :ALL
+			})
 		when "scan all"
 			action = PlayerAction.new(
 				{
