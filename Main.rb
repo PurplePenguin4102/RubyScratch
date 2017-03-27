@@ -1,6 +1,8 @@
 require './Requirements'
 
-puts "\033[?47h"
+puts "\e[H\e[2J"
+#puts "\033[?47h"
+#system clear
 Debug = true
 
 game_state = GameState.new
@@ -16,4 +18,4 @@ loop do
 	end
 end
 
-puts "\033[47I"
+#puts "\033[47I"
