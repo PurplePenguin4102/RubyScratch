@@ -32,7 +32,8 @@ class GameState
 		time = rand(20..59)
 		%Q(
 Welcome star commander "#{@player1.name}". The year is #{year}. It has been #{time} years since the last great planetary conflict.
-As you know, the Kilardi empire was victorious over the evil Meledans. As a decorated military hero, you have
+
+As you know, the #{@player1.empire.name} empire was victorious over the evil #{@player2.empire.name}. As a decorated military hero, you have
 been tasked to secure the frontier sectors. You move your family to the #{@star_field.field_name} star field, and prepare
 yourself mentally for the difficult task ahead.
 
@@ -41,7 +42,7 @@ themselves as independent governments, separate from the galactic alliance. It w
 this wayward system to heel.
 
 You have only your capital ship and your loyal crew at your command, with a rebellious star system before you, and the constant
-threat of a Meledan commander taking the precious resources that rightfully belong to the Kilardi empire.)
+threat of a #{player2.empire.name} commander taking the precious resources that rightfully belong to the #{player1.empire.name} empire.)
 	end
 
 	def to_s

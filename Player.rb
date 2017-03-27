@@ -1,9 +1,8 @@
-Rnd_player_names = ["Melchor", "Terria", "Generoth", "Jaharazhad", "Amos", "Dezzo", "Z", "Xarrat", "Xxyx", 
+class Player
+	Rnd_player_names = ["Melchor", "Terria", "Generoth", "Jaharazhad", "Amos", "Dezzo", "Z", "Xarrat", "Xxyx", 
 					"Yuttip", "Troa", "Kherrith", "Ia", "Llemmeroth", "Oot", "Porato", "Q'Zix", "Restevan"]
 
-class Player
-
-	attr_accessor :name, :ships, :planets, :has_advanced_scanner
+	attr_accessor :name, :ships, :planets, :has_advanced_scanner, :empire
 	
 	def initialize (plr_name = "")
 		@ships = []
@@ -16,6 +15,7 @@ class Player
 			@name = Rnd_player_names.sample if name == "" 
 		end
 		@has_advanced_scanner = false
+		@empire = Empire.new
  	end
 
  	def prompt_name
