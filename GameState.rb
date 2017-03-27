@@ -29,8 +29,12 @@ class GameState
 
 	def get_introduction
 		year = rand(3000..4999)
+		time = rand(20..59)
 		%Q(
-Welcome, star commander. The year is #{year}.)
+Welcome star commander "#{@player1.name}". The year is #{year}. It has been #{time} years since the last great planetary conflict.
+As you know, the Kilardi empire was victorious over the evil Meledans. As a decorated military hero, you have
+been tasked to secure the frontier sectors. You move your to the #{@star_field.field_name} star field, and prepare
+yourself mentally for the difficult task ahead.)
 	end
 
 	def to_s
