@@ -1,39 +1,62 @@
-inspect_all = PlayerAction.new(
+module TestData_PlayerActions
+
+	def inspect_all
+		PlayerAction.new(
+			{
+				:raw_input => "",
+				:action => :INSPECT_ALL,
+				:verb => :INSPECT,
+				:noun => :ALL
+			})
+	end
+
+	def scan_all 
+		PlayerAction.new(
 		{
-			:raw_input => "",
-			:action => :INSPECT_ALL,
-			:verb => :INSPECT,
+			:raw_input => "", 
+			:action => :SCAN_ALL, 
+			:verb => :SCAN, 
 			:noun => :ALL
 		})
+	end
 
-scan_all = PlayerAction.new(
-	{
-		:raw_input => "", 
-		:action => :SCAN_ALL, 
-		:verb => :SCAN, 
-		:noun => :ALL
-	})
+	def scan_planet  
+		PlayerAction.new(
+		{
+			:raw_input => "", 
+			:action => :SCAN_PLANET, 
+			:verb => :SCAN, 
+			:noun => "new haven"
+		})
+	end
 
-scan_planet = PlayerAction.new(
-	{
-		:raw_input => "", 
-		:action => :SCAN_PLANET, 
-		:verb => :SCAN, 
-		:noun => "new haven"
-	})
+	def scan_luthor
+		PlayerAction.new(
+		{
+			:raw_input => "", 
+			:action => :SCAN_PLANET, 
+			:verb => :SCAN, 
+			:noun => "luthor"
+		})
+	end
 
-end_turn = PlayerAction.new(
-	{
-		:raw_input => "",
-		:action => :END_TURN,
-		:verb => :END,
-		:noun => :TURN
-	})
+	def end_turn 
+		PlayerAction.new(
+		{
+			:raw_input => "",
+			:action => :END_TURN,
+			:verb => :END,
+			:noun => :TURN
+		})
+	end
 
-do_nothing = PlayerAction.new(
-	{
-		:raw_input => "", 
-		:action => :DO_NOTHING, 
-		:verb => :DO, 
-		:noun => :NOTHING
-	})
+	def do_nothing 
+		PlayerAction.new(
+		{
+			:raw_input => "", 
+			:action => :DO_NOTHING, 
+			:verb => :DO, 
+			:noun => :NOTHING
+		})
+	end
+end
