@@ -46,14 +46,27 @@ class StellarObjectTests < Minitest::Test
 		obj = StellarObject.new [2, 3, 4]
 		friendly = origin.display_distance(obj)
 		
-		assert "The object is 5Mkm away, at a yaw of ?? and a pitch of ??"
+		assert "object is 5Mkm away" == friendly
 
 	end
 
-	def test_get_absolute_coordinates
+	def test_get_theta
+		origin = StellarObject.new [0, 0, 0]
+		obj = StellarObject.new [3, 4, 5]
+		theta = Math.asin(4 / 5.0)
+		real_theta = origin.get_theta(obj)
+		puts "==="
+		puts real_theta, theta
+		puts "==="
+		assert theta == real_theta
 	end
 
 	def test_get_relative_coordinates
+		origin = StellarObject.new [0, 0, 0]
+		obj = StellarObject.new [3, 4, 5]
+		puts "==="
+		puts origin.display_coords_rads(obj)
+		puts "==="
 	end
 
 end
